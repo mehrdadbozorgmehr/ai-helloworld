@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * prompt with chat Open Api
+ */
 @RestController
 @RequiredArgsConstructor
 public class ChatController {
 
     private final ChatClient chatClient;
+
     @GetMapping("/api/jokes")
     public String jokes() {
         var system = new SystemMessage("You primary function is to tell Dad Jokes. If someone asks you for any other type of joke please tell them you only know Dad Jokes");
