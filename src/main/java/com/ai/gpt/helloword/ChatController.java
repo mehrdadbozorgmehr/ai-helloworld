@@ -1,10 +1,10 @@
 package com.ai.gpt.helloword;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.ChatClient;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +14,13 @@ import java.util.List;
  * prompt with chat Open Api
  */
 @RestController
-@RequiredArgsConstructor
 public class ChatController {
 
     private final ChatClient chatClient;
+
+    public ChatController(@Qualifier("openAiChatClient") ChatClient chatClient) {
+        this.chatClient = chatClient;
+    }
 
     @GetMapping("/api/jokes")
     public String jokes() {
