@@ -34,13 +34,6 @@
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-vertex-ai-gemini-spring-boot-starter</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>com.google.cloud</groupId>
-			<artifactId>google-cloud-vertexai</artifactId>
-			<version>0.7.0</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
